@@ -1,0 +1,9 @@
+<% if user_signed_in? %>
+  <%= link_to 'Logout', destroy_user_session_path, :class => 'btn btn-default' %>
+  <h1 class='text-center'>Welcome <%= @user.name %></h1>
+
+<% else %>
+<%= link_to 'Sign-in', new_user_session_path, :class => 'btn btn-default' %>
+<%= link_to 'Sign-up', new_user_registration_path, :class => 'btn btn-default' %>
+  <h1 class='text-center'>Welcome to Health Tracker</h1>
+<% end %>
