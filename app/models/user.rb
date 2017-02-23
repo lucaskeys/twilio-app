@@ -3,6 +3,4 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :name, presence: :true
-  has_many :diets
-  has_many :exercises
 end
