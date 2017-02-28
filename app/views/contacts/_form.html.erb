@@ -1,0 +1,23 @@
+<%= render 'layouts/errors', :object => @contact %>
+
+<div class="container">
+  <%= form_for @contact do |f| %>
+  <div class="form-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, :class => 'form-control' %>
+  </div>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+
+  <%= f.submit 'Save Contact!', :class => 'btn btn-default'%>
+  <% end %>  
+</div>

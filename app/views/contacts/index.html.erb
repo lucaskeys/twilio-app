@@ -1,0 +1,13 @@
+<div class="container">
+  <%= link_to 'Add Contact', new_contact_path, :class => 'btn btn-default' %>
+  <% if !@user.contacts.any? %>
+    <h1 class="text-center no-contacts">You have no contacts</h1>
+  <% else %>
+    <% @user.contacts.each do |contact| %>
+      <li><%= link_to contact.first_name + ' ' + contact.last_name, contact_path(contact) %>
+        <%= link_to new_message_path do %>
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+      <% end %></li>
+    <% end %>
+  <% end %>
+</div>
