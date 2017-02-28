@@ -4,3 +4,35 @@
 li {
   list-style: none;
 }
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  position: relative;
+}
+
+.phone {
+  border: 3px solid #000;
+  border-radius: 30px;
+  height: 700px;
+  width: 500px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.message {
+  position: absolute;
+  top: 92.7%;
+  width: 100%;
+}
+
+.field {
+  height: 50px;
+  border-bottom-left-radius: 29px;
+  border-bottom-right-radius: 29px;
+}

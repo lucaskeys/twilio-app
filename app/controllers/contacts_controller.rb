@@ -7,6 +7,8 @@ def index
 end
 
 def show
+  @user = current_user
+  @message = Message.new
 end
 
 def new

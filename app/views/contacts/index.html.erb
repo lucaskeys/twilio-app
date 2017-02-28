@@ -3,11 +3,17 @@
   <% if !@user.contacts.any? %>
     <h1 class="text-center no-contacts">You have no contacts</h1>
   <% else %>
-    <% @user.contacts.each do |contact| %>
-      <li><%= link_to contact.first_name + ' ' + contact.last_name, contact_path(contact) %>
-        <%= link_to new_message_path do %>
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-      <% end %></li>
-    <% end %>
+    <table class="table table-striped table-bordered">
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+      </tr>
+      <% @user.contacts.each do |contact| %>
+      <tr data-link='<%= contact_path(contact) %>'>
+        <td><%= contact.last_name %></td>
+        <td><%= contact.first_name %></td>
+      </tr>
+      <% end %>
+    </table>
   <% end %>
 </div>

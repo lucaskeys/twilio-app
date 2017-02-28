@@ -1,0 +1,13 @@
+<%= render 'layouts/errors', :object => @message %>
+
+<%= form_for [@contact, @message] do |f| %>
+  <div class="form-group">
+    <%= f.text_field :body, :class => 'form-control field' %>
+  </div>
+  <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.hidden_field :to, :value => @contact.phone_number %>
+  <%= f.hidden_field :from, :value => @user.phone_number %>
+  <%= f.submit do %>
+    <i class="fa fa-bath" aria-hidden="true"></i>
+  <% end %>
+<% end %>

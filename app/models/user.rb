@@ -4,5 +4,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   has_many :contacts
+  has_many :messages, through: :contacts
   validates :phone_number, presence: true
   end

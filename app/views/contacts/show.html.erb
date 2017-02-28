@@ -2,3 +2,18 @@
   <h1 class="text-center"><%= @contact.first_name %> <%= @contact.last_name %></h1>
   <p class="text-center"><%= @contact.phone_number %></p>
 </div>
+
+<div class="row">
+  <div class="phone">
+    <% if !@user.messages.any? %>
+      <h2 class='text-center'>You have no messages</h2>
+    <% else %>
+      <% @user.messages.each do |message| %>
+        <p><%= message.body %></p>
+      <% end %>
+    <% end %>
+    <div class="message">
+      <%= render 'messages/form' %>
+    </div>
+  </div>
+</div>
